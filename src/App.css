@@ -2,13 +2,14 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.logo {
+  height: 50px;
   pointer-events: none;
+  float: left;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .logo {
     animation: App-logo-float infinite 3s ease-in-out;
   }
 }
@@ -36,4 +37,7 @@
   100% {
     transform: translateY(0px);
   }
+}
+.navbar {
+  background-color: #C70039 ;
 }
