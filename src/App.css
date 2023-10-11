@@ -41,3 +41,9 @@
 .navbar {
   background-color: #C70039 ;
 }
+
+.site-footer {
+  background-image: linear-gradient(white, #C70039);
+  padding: 20px 0;
+  margin-top: 2rem;
+}
