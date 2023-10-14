@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .logo {
@@ -12,7 +13,10 @@
   height: 400px;
 }
 
-
+.profile {
+  height: 350px;
+  border-radius: 50%;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .logo {
