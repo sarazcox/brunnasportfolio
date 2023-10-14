@@ -1,12 +1,24 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { Button, FormGroup, Label, Input, Col } from "reactstrap";
-
+import { validateContactForm } from "../utils/validateContactForm";
 
 const ContactForm = () => {
   const handleSubmit = (values, { resetForm }) => {
-    // You can handle the form submission here, e.g., send data to a server
+    const referencesInput = document.querySelectorAll('input[type="file"]');
+    const referenceFiles = [];
+
+    // Iterate through the file input elements and collect the file names
+    referencesInput.forEach((input) => {
+      const files = input.files;
+      for (let i = 0; i < files.length; i++) {
+        referenceFiles.push(files[i].name);
+      }
+    });
+
     console.log("Form submitted:", values);
+    console.log("in JSON format:", JSON.stringify(values));
+    console.log("References Images:", referenceFiles);
     resetForm();
   };
 
@@ -21,6 +33,7 @@ const ContactForm = () => {
         references: "",
       }}
       onSubmit={handleSubmit}
+      validate={validateContactForm}
     >
       {() => (
         <Form>
@@ -32,10 +45,12 @@ const ContactForm = () => {
               <Field
                 type="text"
                 name="name"
-                id="name"
-                as={Input}
+                className="form-control"
                 placeholder="Your Full Name"
               />
+              <ErrorMessage name="name">
+                {(msg) => <p className="text-danger">{msg}</p>}
+              </ErrorMessage>
             </Col>
           </FormGroup>
           <FormGroup row>
@@ -46,10 +61,12 @@ const ContactForm = () => {
               <Field
                 type="email"
                 name="email"
-                id="email"
-                as={Input}
+                className="form-control"
                 placeholder="Your Email"
               />
+              <ErrorMessage name="email">
+                {(msg) => <p className="text-danger">{msg}</p>}
+              </ErrorMessage>
             </Col>
           </FormGroup>
           <FormGroup row>
@@ -59,11 +76,13 @@ const ContactForm = () => {
             <Col md="10">
               <Field
                 type="phone"
-                name="phone"
-                id="phone"
-                as={Input}
+                name="phoneNum"
+                className="form-control"
                 placeholder="Your Phone Number"
               />
+              <ErrorMessage name="phoneNum">
+                {(msg) => <p className="text-danger">{msg}</p>}
+              </ErrorMessage>
             </Col>
           </FormGroup>
           <FormGroup row>
@@ -74,10 +93,13 @@ const ContactForm = () => {
               <Field
                 type="textarea"
                 name="description"
-                id="description"
                 as={Input}
-                placeholder="Describe placement, size, style  "
+                rows="5"
+                placeholder="Describe placement, size, style and more..."
               />
+              <ErrorMessage name="description">
+                {(msg) => <p className="text-danger">{msg}</p>}
+              </ErrorMessage>
             </Col>
           </FormGroup>
           <FormGroup row>
@@ -85,15 +107,14 @@ const ContactForm = () => {
               References
             </Label>
             <Col md="5">
-            <input type="file" name="photo" accept="image/*" />
+              <input type="file" name="references" accept="image/*" />
             </Col>
             <Col md="5">
-            <input type="file" name="photo" accept="image/*" />
+              <input type="file" name="references" accept="image/*" />
             </Col>
-            
           </FormGroup>
           <FormGroup row>
-            <Label check >
+            <Label check>
               Is this a cover up?
               <div>
                 <Label check>
@@ -103,7 +124,7 @@ const ContactForm = () => {
                     value="yes"
                     className="form-check-input"
                   />
-                  {' Yes  '}
+                  {" Yes  "}
                 </Label>
                 <Label check>
                   <Field
@@ -112,12 +133,15 @@ const ContactForm = () => {
                     value="no"
                     className="form-check-input"
                   />
-                  {' No '} 
+                  {" No "}
                 </Label>
               </div>
             </Label>
           </FormGroup>
-          <Button type="submit" style={{ backgroundColor: "#C70039", color: "#FFF5E0" }}>
+          <Button
+            type="submit"
+            style={{ backgroundColor: "#C70039", color: "#FFF5E0" }}
+          >
             Submit
           </Button>
         </Form>
