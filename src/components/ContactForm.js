@@ -124,8 +124,9 @@ const ContactForm = () => {
                     value="yes"
                     className="form-check-input"
                   />
-                  {" Yes  "}
+                  {" Yes "}
                 </Label>
+                { "  " }
                 <Label check>
                   <Field
                     type="radio"

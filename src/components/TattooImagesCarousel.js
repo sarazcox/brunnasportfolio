@@ -4,13 +4,17 @@ import {
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption,
 } from "reactstrap";
 import Tattoo1 from "../app/assets/img/tattoo1.jpg";
 import Tattoo2 from "../app/assets/img/tattoo2.jpg";
 import Tattoo3 from "../app/assets/img/tattoo3.jpg";
 import Tattoo4 from "../app/assets/img/tattoo4.jpg";
 import Tattoo5 from "../app/assets/img/tattoo5.jpg";
+import Tattoo6 from "../app/assets/img/tattoo6.jpg";
+import Tattoo7 from "../app/assets/img/tattoo7.jpg";
+import Tattoo8 from "../app/assets/img/tattoo8.jpg";
+
+
 
 const items = [
   {
@@ -35,8 +39,23 @@ const items = [
   },
   {
     src: Tattoo5,
-    altText: "Humming bird Tattoo",
+    altText: "Leopard Tattoo",
     key: 5,
+  },
+  {
+    src: Tattoo6,
+    altText: "Tree Tattoo",
+    key: 6,
+  },
+  {
+    src: Tattoo7,
+    altText: "Humming bird Tattoo",
+    key: 7,
+  },
+  {
+    src: Tattoo8,
+    altText: "Humming bird Tattoo",
+    key: 8,
   },
 ];
 
@@ -69,10 +88,7 @@ function TattooImagesCarousel(args) {
         key={item.src}
       >
         <img src={item.src} alt={item.altText} style={{ width: "500px" }} />
-        <CarouselCaption
-          captionText={item.caption}
-          captionHeader={item.caption}
-        />
+        
       </CarouselItem>
     );
   });
@@ -103,5 +119,11 @@ function TattooImagesCarousel(args) {
     </Carousel>
   );
 }
-
+const originalError = console.error;
+console.error = (...args) => {
+  if (args[0] && args[0].includes('Legacy context API')) {
+    return;
+  }
+  originalError(...args);
+}; 
 export default TattooImagesCarousel;

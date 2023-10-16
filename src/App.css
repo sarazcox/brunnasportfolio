@@ -1,12 +1,10 @@
 .App {
   text-align: center;
-
 }
 
 .logo {
   height: 50px;
   pointer-events: none;
-  float: left;
 }
 
 .map {
@@ -48,10 +46,21 @@
     transform: translateY(0px);
   }
 }
-.navbar {
-  background-color: #C70039 ;
+
+.home {
+  background-color: aliceblue;
+  
 }
 
+
+
+.work {
+  background-color: bisque;
+}
+
+.contact {
+  background-color: aqua;
+}
 .site-footer {
   background-image: linear-gradient(white, #C70039);
   padding: 20px 0;

@@ -1,29 +1,36 @@
 import React from "react";
 import { Container, Col, Row } from "reactstrap";
 import ContactForm from "./ContactForm";
-import map from "../app/assets/img/Map.PNG";
 
 const ContactMe = () => {
   return (
-    <Container>
-      <Row className="row-content">
+    <Container id="contact" className="contact">
+      <Row className="row-content pb-5">
         <Col xs="12">
           <h2>Get a quote</h2>
           <hr />
         </Col>
-        <Col md="6"><ContactForm /><br /></Col>
         <Col md="6">
-        {/* Map api */}
-        <img className="map" src={map} alt="google maps location" />
+          <ContactForm />
+          <br />
         </Col>
-        <hr />       
+        <Col md="6">
+          <iframe
+            width="100%"
+            height="100%"
+            title="map"
+            className="absolute inset-0 "
+            style={{ filter: "opacity(0.7)" }}
+            src="https://www.google.com/maps/embed/v1/place?q=R.+Teodoto+Tonon,+243+-+Centro,+Tubarão+-+SC,+88705-010,+Brazil&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+          />
+        </Col>
+
       </Row>
-      <br />
       
       <Row className="row-content align-items-center">
         <Col md="4">
-        <i className="fa fa-map-marker fa-2x" aria-hidden="true"></i>
-        <br />
+          <i className="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+          <br />
           <a
             role="button"
             className="btn btn-link"
@@ -34,20 +41,20 @@ const ContactMe = () => {
           </a>
         </Col>
         <Col md="4">
-        <i className="fa fa-envelope fa-2x" aria-hidden="true"></i>
-        <br />
+          <i className="fa fa-envelope fa-2x" aria-hidden="true"></i>
+          <br />
           <a
             role="button"
             className="btn btn-link"
             href="mailto:fakeemail@fakeemail.co"
             style={{ color: "#141E46" }}
           >
-            fakeemail@fakeemail.co
+            fakeemail@fakeemail.com
           </a>
         </Col>
         <Col md="4">
-        <i className="fa fa-phone fa-2x" aria-hidden="true"></i>
-        <br />
+          <i className="fa fa-phone fa-2x" aria-hidden="true"></i>
+          <br />
           <a
             role="button"
             className="btn btn-link"

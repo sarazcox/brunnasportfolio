@@ -4,7 +4,6 @@ import {
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption,
 } from "reactstrap";
 import Embroidery1 from "../app/assets/img/bordado1.jpg";
 import Embroidery2 from "../app/assets/img/bordado2.jpg";
@@ -64,10 +63,7 @@ function EmbroideryImagesCarousel(args) {
         key={item.src}
       >
         <img src={item.src} alt={item.altText} style={{ width: "500px" }} />
-        <CarouselCaption
-          captionText={item.caption}
-          captionHeader={item.caption}
-        />
+        
       </CarouselItem>
     );
   });
@@ -99,4 +95,11 @@ function EmbroideryImagesCarousel(args) {
   );
 }
 
+const originalError = console.error;
+console.error = (...args) => {
+  if (args[0] && args[0].includes('Legacy context API')) {
+    return;
+  }
+  originalError(...args);
+};
 export default EmbroideryImagesCarousel;
