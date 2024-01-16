@@ -3,7 +3,7 @@
 }
 
 .logo {
-  height: 50px;
+  height: 80px;
   pointer-events: none;
 }
 
@@ -47,20 +47,6 @@
   }
 }
 
-.home {
-  background-color: aliceblue;
-  
-}
-
-
-
-.work {
-  background-color: bisque;
-}
-
-.contact {
-  background-color: aqua;
-}
 .site-footer {
   background-image: linear-gradient(white, #C70039);
   padding: 20px 0;

@@ -7,13 +7,13 @@ import {
   Nav,
   NavItem,
 } from "reactstrap";
-import logo from "../app/assets/img/logo.png";
+import logo from "../app/assets/img/logo-white.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <Navbar dark sticky="top" expand="md" style={{ "backgroundColor": "#C70039"}}  >
+    <Navbar dark sticky="top" expand="md" style={{ "backgroundColor": "black"}}  >
       <NavbarBrand className="ms-5">     
         <img src={logo} alt="brunna's logo" className="float-start logo"  />        
       </NavbarBrand>   

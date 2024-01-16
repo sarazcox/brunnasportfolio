@@ -4,7 +4,7 @@ import ContactForm from "./ContactForm";
 
 const ContactMe = () => {
   return (
-    <Container id="contact" className="contact">
+    <Container id="contact" fluid style={{backgroundColor: "#F5F7F8"}}>
       <Row className="row-content pb-5">
         <Col xs="12">
           <h2>Get a quote</h2>

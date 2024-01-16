@@ -4,7 +4,7 @@ import EmbroideryImagesCarousel from "./EmbroideryImagesCarousel";
 
 const MyWork = () => {
   return (
-    <Container id="work" className="work">
+    <Container id="work" fluid style={{backgroundColor: "#FF6969"}}>
       {<br />}
       <Row>
         <Col md="12">

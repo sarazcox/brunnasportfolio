@@ -3,7 +3,7 @@ import profile from "../app/assets/img/profile.jpg";
 
 const AboutMe = () => {
   return (
-    <Container id="about" fluid  style={{backgroundColor: "aquamarine"}} >
+    <Container id="about" fluid  style={{backgroundColor: "#F5F7F8"}} >
       {<br />}
       <Row className="mx-5">
         <Col md="6">
