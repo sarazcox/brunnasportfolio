@@ -5,6 +5,7 @@ import ContactForm from "./ContactForm";
 const ContactMe = () => {
   return (
     <Container id="contact" fluid style={{backgroundColor: "#F5F7F8"}}>
+      {<br />}
       <Row className="row-content pb-5">
         <Col xs="12">
           <h2>Get a quote</h2>
@@ -24,7 +25,6 @@ const ContactMe = () => {
             src="https://www.google.com/maps/embed/v1/place?q=R.+Teodoto+Tonon,+243+-+Centro,+Tubarão+-+SC,+88705-010,+Brazil&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
           />
         </Col>
-
       </Row>
       
       <Row className="row-content align-items-center">
@@ -65,6 +65,7 @@ const ContactMe = () => {
           </a>
         </Col>
       </Row>
+      {<br />}
     </Container>
   );
 };

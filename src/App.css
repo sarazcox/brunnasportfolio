@@ -48,7 +48,7 @@
 }
 
 .site-footer {
-  background-image: linear-gradient(white, #C70039);
+  background-image: linear-gradient(#EDECED, #C38878);
   padding: 20px 0;
-  margin-top: 2rem;
+  margin-top: 0;
 }
