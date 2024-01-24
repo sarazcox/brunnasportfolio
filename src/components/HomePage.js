@@ -8,15 +8,14 @@ const backgroundImageStyle = {
   backgroundRepeat: "no-repeat",
   paddingTop: "20%",
   display: "relative",
-
 };
 
 const HomePage = () => {
   return (
-    <Container id="home" fluid style={backgroundImageStyle} className="justify-content-center">
-      <Row className="justify-content-end">
+    <Container id="home" fluid style={backgroundImageStyle}>
+      <Row className="d-flex justify-content-end align-items-center row-content">
         <Col md="6">
-          <h1>Hello, my name is Brunna Venancio. Welcome to my Portfolio</h1>
+          <h1>Welcome to my Portfolio</h1>
         </Col>
       </Row>
     </Container>
